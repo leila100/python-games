@@ -32,6 +32,15 @@ ball.color("white")
 ball.penup()  # don't draw movements
 ball.goto(0, 0)
 
+def paddle_a_up():
+    y = paddle_a.ycor()
+    y += 20
+    paddle_a.sety(y)
+
+# Keyboard binding
+wn.listen()
+wn.onkeypress(paddle_a_up, "w")
+
 # Main game loop
 while True:
     wn.update() # update the screen for each loop run
