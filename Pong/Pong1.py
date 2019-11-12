@@ -1,4 +1,5 @@
 import turtle
+import winsound
 
 wn = turtle.Screen()
 wn.title("Pong by Leila")
@@ -88,9 +89,11 @@ while True:
     if ball.ycor() > 290:
         ball.sety(290)
         ball.dy *= -1
+        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
     if ball.ycor() < -290:
         ball.sety(-290)
         ball.dy *= -1
+        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
     if ball.xcor() > 390:
         ball.goto(0, 0)
         ball.dx *= -1
@@ -108,6 +111,9 @@ while True:
     if ball.xcor() > 340 and ball.xcor() < 350 and (ball.ycor()<paddle_b.ycor()+40 and ball.ycor()>paddle_b.ycor()-40 ):
         ball.setx(340)
         ball.dx *= -1
-    if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor()<paddle_a.ycor()+40 and ball.ycor()>paddle_a.ycor()-40 ):
+        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
+
+    if ball.xcor() < -340 and ball.xcor() > -350 and (ball.ycor()<paddle_a.ycor()+50 and ball.ycor()>paddle_a.ycor()-50 ):
         ball.setx(-340)
         ball.dx *= -1
+        winsound.PlaySound("bounce.wav", winsound.SND_ASYNC)
