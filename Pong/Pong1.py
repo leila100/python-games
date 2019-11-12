@@ -25,6 +25,12 @@ paddle_b.penup()  # don't draw movements
 paddle_b.goto(350, 0)
 
 # Ball
+ball = turtle.Turtle()
+ball.speed(0) # set speed to maximum possible speed
+ball.shape("square")
+ball.color("white")
+ball.penup()  # don't draw movements
+ball.goto(0, 0)
 
 # Main game loop
 while True:
